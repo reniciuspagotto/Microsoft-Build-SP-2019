@@ -1,0 +1,46 @@
+﻿@page "/customer"
+@inject BlazorServerSide.Application.CustomerService customerService
+@using BlazorServerSide.ViewModel
+
+<p>
+    <a href="/customer/create">Novo cliente</a>
+</p>
+
+@if (vm == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class='table'>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>Idade</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var emp in vm)
+            {
+                <tr>
+                    <td>@emp.Nome</td>
+                    <td>@emp.Sobrenome</td>
+                    <td>@emp.Idade</td>
+                    <td>
+                        <a href='/customer/edit/@emp.Id'>Editar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+@functions {
+
+    List<Customer> vm = new List<Customer>();
+
+    protected override void OnInit()
+    {
+        vm = customerService.GetAll();
+    }
+}

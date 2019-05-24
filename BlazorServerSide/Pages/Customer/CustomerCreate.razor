@@ -1,0 +1,38 @@
+﻿@page "/customer/create"
+@inject IUriHelper urihelper;
+@inject BlazorServerSide.Application.CustomerService customerService
+
+@using BlazorServerSide.ViewModel
+
+<h2>Adicionar Cliente</h2>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            <label asp-for="Nome" class="control-label">Nome</label>
+            <input asp-for="Nome" class="form-control" bind="@vm.Nome" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Sobrenome" class="control-label">Sobrenome</label>
+            <input asp-for="Sobrenome" class="form-control" bind="@vm.Sobrenome" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Idade" class="control-label">Idade</label>
+            <input asp-for="Idade" class="form-control" bind="@vm.Idade" />
+        </div>
+
+        <button class="btn btn-primary" onclick="@Create">Salvar</button>
+    </div>
+</div>
+
+@functions {
+
+    Customer vm = new Customer();
+
+    void Create()
+    {
+        customerService.Save(vm);
+        urihelper.NavigateTo("/customer");
+    }
+}

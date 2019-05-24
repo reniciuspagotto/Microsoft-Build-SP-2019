@@ -1,9 +1,8 @@
-﻿@using BlazorServerSide.ViewModel
-@page "/client"
+﻿@page "/customer/edit/{id}"
 @inject IUriHelper urihelper;
+@inject BlazorServerSide.Application.CustomerService customerService
 
-<h2>Adicionar Cliente</h2>
-<hr />
+@using BlazorServerSide.ViewModel
 
 <div class="row">
     <div class="col-md-4">
@@ -20,16 +19,32 @@
             <input asp-for="Idade" class="form-control" bind="@vm.Idade" />
         </div>
 
-        <button class="btn btn-primary" onclick="@Create">Salvar</button>
+        <button class="btn btn-primary" onclick="@Update">Salvar</button>
+        <button class="btn btn-primary" onclick="@Cancel">Voltar</button>
     </div>
 </div>
 
 @functions {
 
-    CustomerViewModel vm = new CustomerViewModel();
+    [Parameter]
+    String id { get; set; }
 
-    void Create()
+    Customer vm = new Customer();
+
+    protected override void OnInit()
     {
-        urihelper.NavigateTo("/fetchdata");
+        var guid = Guid.Parse(id);
+        vm = customerService.GetById(guid);
+    }
+
+    void Cancel()
+    {
+        urihelper.NavigateTo("/customer");
+    }
+
+    void Update()
+    {
+        customerService.Update(vm);
+        urihelper.NavigateTo("/customer");
     }
 }
