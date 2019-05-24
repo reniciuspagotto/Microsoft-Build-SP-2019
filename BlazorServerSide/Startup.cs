@@ -15,10 +15,12 @@ namespace BlazorServerSide
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApiContext>(opt => opt.UseInMemoryDatabase("InMemoryDatabase"));
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
+
+            // For Customer Entity
+            services.AddDbContext<ApiContext>(opt => opt.UseInMemoryDatabase("InMemoryDatabase"));
             services.AddTransient<CustomerService>();
         }
 
