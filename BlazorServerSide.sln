@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.28803.452
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorServerSide", "BlazorServerSide\BlazorServerSide.csproj", "{38A5EABE-393B-40ED-944E-6A1957D18516}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetAngularTemplate", "AspNetAngularTemplate\AspNetAngularTemplate.csproj", "{EC46C1B7-A944-4803-A06E-2E9AC7757C76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetReactTemplate", "AspNetReactTemplate\AspNetReactTemplate.csproj", "{8E3D331E-BE25-4A34-AB6F-7C12741ACBFA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{38A5EABE-393B-40ED-944E-6A1957D18516}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38A5EABE-393B-40ED-944E-6A1957D18516}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38A5EABE-393B-40ED-944E-6A1957D18516}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC46C1B7-A944-4803-A06E-2E9AC7757C76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC46C1B7-A944-4803-A06E-2E9AC7757C76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC46C1B7-A944-4803-A06E-2E9AC7757C76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC46C1B7-A944-4803-A06E-2E9AC7757C76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E3D331E-BE25-4A34-AB6F-7C12741ACBFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E3D331E-BE25-4A34-AB6F-7C12741ACBFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E3D331E-BE25-4A34-AB6F-7C12741ACBFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E3D331E-BE25-4A34-AB6F-7C12741ACBFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
